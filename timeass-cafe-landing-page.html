@@ -1,0 +1,167 @@
+# timeass-cafe-landing-page
+
+
+
+☕ About the Project: Timeass Cafe Landing Page
+Timeass Cafe is a modern, Zomato-inspired landing page designed for a premium coffee shop based in Dhaka. The goal of this project is to showcase a visually appealing, responsive web interface that uses warm, coffee-themed color theory, 3D animated typography, and clean layout principles to attract users.
+
+🔥 Features:
+-3D rotating hero text with continuous animation
+-Typing effect for location emphasis (“in Dhaka”)
+-Zomato-style header and layout for a modern look
+-Coffee-inspired color palette using design theory
+-Fully responsive and clean UI with semantic HTML & CSS
+-Ready for integration with restaurant menus, search, or user login systems
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Timeass Cafe - Discover Great Coffee in Dhaka</title>
+  <style>
+    :root {
+      --coffee-bg: #4b2e2e;
+      --coffee-accent: #d2691e;
+      --coffee-light: #ffe5b4;
+      --coffee-text: #fdf5e6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--coffee-light);
+      color: var(--coffee-text);
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: var(--coffee-bg);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    header ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    header ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    header ul li a:hover {
+      color: var(--coffee-accent);
+    }
+
+    .hero-section {
+      height: 90vh;
+      background: linear-gradient(to right, #3b2c2c, #5c3d2e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-text {
+      font-size: 3.5rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ffcc80, #ffe082);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+      transform-style: preserve-3d;
+      animation: rotate3D 6s ease-in-out infinite alternate;
+    }
+
+    .typing {
+      font-size: 1.8rem;
+      color: #ffe5b4;
+      margin-top: 15px;
+      font-weight: 600;
+      border-right: 3px solid var(--coffee-text);
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 2.5s steps(20, end) forwards, blink 0.7s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 150px }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    @keyframes rotate3D {
+      0% {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+      50% {
+        transform: rotateX(10deg) rotateY(10deg);
+      }
+      100% {
+        transform: rotateX(-10deg) rotateY(-10deg);
+      }
+    }
+
+    footer {
+      background-color: var(--coffee-bg);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Timeass Cafe</div>
+    <ul>
+      <li><a href="#">Investor Relations</a></li>
+      <li><a href="#">Add Cafe</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Signup</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="hero-text">Discover Great Coffee</div>
+      <div class="typing">in Dhaka</div>
+    </section>
+  </main>
+
+  <footer>
+    © 2030 Timeass Cafe. All rights reserved.
+  </footer>
+
+</body>
+</html>
